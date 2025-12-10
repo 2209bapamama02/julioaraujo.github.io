@@ -1,0 +1,666 @@
+/* Reset dan Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: #ffffff; /* PUTIH TOTAL */
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container Utama */
+.container {
+  flex: 1;
+  padding: 10px 20px;
+  overflow-y: auto;
+  padding-bottom: 80px; /* Ruang untuk navbar */
+  background: #89a4d7;
+}
+
+/* Navbar Bottom */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 1000;
+}
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 5px;
+  border-radius: 10px;
+  color: #000;
+}
+.navbar-item.active {
+  background: #eaf3ff;
+  color: #0066ff;
+}
+.navbar-item svg {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 5px;
+}
+.navbar-item span {
+  font-size: 12px;
+}
+
+/* Halaman Konten */
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
+/* ========= HOME STYLE BARU =========== */
+
+.home-page {
+  padding: 10px;
+  background: #fff;
+}
+
+/* ===== HEADER BAR ===== */
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 5px 0;
+}
+
+/* KIRI: LOGO */
+.header-left .app-logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* TENGAH: NAMA + SUBTITLE */
+.header-center {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+}
+.logo-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #005be0;
+}
+.subtitle {
+  color: #666;
+  font-size: 12px;
+  margin-top: -3px;
+}
+
+/* KANAN: IKON */
+.header-right {
+  display: flex;
+  gap: 0px;
+}
+.header-right .icon img {
+  width: 34px; /* ubah sesuai keinginan */
+  height: 34px; /* bisa diganti atau dihapus agar auto */
+  object-fit: contain;
+}
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+.icon:hover {
+  background: #f0f5ff;
+}
+
+/* Search Bar */
+.search-box {
+  width: 100%;
+  position: relative;
+  margin: 15px 0;
+}
+.search-box input {
+  width: 100%;
+  padding: 12px 40px 12px 45px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+  background: #ffffff;
+}
+.search-box .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  font-size: 22px;
+  color: #555;
+}
+
+/* Banner */
+.banner-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+.banner-row img {
+  width: 70%;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Section Title */
+.section-title {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Category Pill */
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cat-item {
+  padding: 8px 15px;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #dcdcdc;
+}
+
+/* Traveler Populer */
+.traveler-scroll {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+}
+.traveler-card {
+  background: white;
+  padding: 10px;
+  width: 190px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.traveler-card .avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Avatar setiap traveler */
+.avatar-novita {
+  background-image: url("img/avatarcewe.png"); /* ganti dengan gambar cewe */
+}
+
+.avatar-julio {
+  background-image: url("img/avatarcowo.png"); /* ganti dengan gambar cowo */
+}
+
+/* Request List */
+.request-card {
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.req-avatar {
+  width: 45px;
+  height: 45px;
+  background: #cfcfcf;
+  border-radius: 50%;
+}
+.req-info p {
+  font-size: 13px;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .home-page {
+    max-width: 600px;
+    margin: auto;
+  }
+  .banner-row img {
+    width: 40%;
+  }
+}
+/* ==== END STyle Home ==== */
+
+/* ==== Marketplace Styles ==== */
+#marketplace {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.marketplace-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.search-icon {
+  color: #999;
+}
+
+.country-selector,
+.category-selector {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.country-selector p,
+.category-selector p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.country-buttons,
+.category-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; /* Memastikan tombol turun ke baris baru jika tidak cukup ruang */
+}
+
+.country-button,
+.category-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: #666;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.country-button.active,
+.category-button.active {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.popular-requests {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popular-requests p {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.request-item:last-child {
+  border-bottom: none;
+}
+
+.request-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.request-image i {
+  font-size: 20px;
+  color: #999;
+}
+
+.request-details {
+  flex: 1;
+}
+
+.request-name {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.request-description {
+  color: #666;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.action-button.primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.action-button.secondary {
+  background-color: #ddd;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .marketplace-page {
+    max-width: 600px;
+    margin: auto;
+  }
+  .banner-row img {
+    width: 40%;
+  }
+}
+/* ==== END Marketplace ==== */
+
+/* Start Style Order */
+#order {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-header-button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #666;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.order-header-button:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-card-left {
+  display: flex;
+  align-items: center;
+}
+
+.order-number-icon {
+  font-size: 24px;
+  color: #999;
+  margin-right: 10px;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.order-description,
+.order-status {
+  color: #666;
+}
+
+.order-detail-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-detail-button:hover {
+  background-color: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .order-page {
+    max-width: 600px;
+    margin: auto;
+  }
+  .banner-row img {
+    width: 40%;
+  }
+}
+/* End Style Order */
+
+/* ==== Start Style Profil ==== */
+#profil {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #005be0;
+  cursor: pointer;
+}
+
+.profile-title {
+  font-size: 22px;
+  color: #005be0;
+}
+
+.header-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.header-icons i {
+  font-size: 20px;
+  color: #0033ff;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #0033ff;
+  color: #fff;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.profile-rating {
+  color: #ffc107;
+}
+
+.profile-rating i {
+  margin: 0 2px;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.chat-button,
+.edit-profile-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 10px 20px;
+  color: #666;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chat-button i,
+.edit-profile-button i {
+  color: #007bff;
+}
+
+.account-security-title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.account-security-list,
+.additional-options-list {
+  list-style: none;
+  padding: 0;
+}
+
+.account-security-item,
+.additional-options-item {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+}
+
+.account-security-item i,
+.additional-options-item i {
+  color: #999;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  .profil-page {
+    max-width: 600px;
+    margin: auto;
+  }
+  .banner-row img {
+    width: 40%;
+  }
+}
+/* End Style Profil */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px 15px;
+  }
+}

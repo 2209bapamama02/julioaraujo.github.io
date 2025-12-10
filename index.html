@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile App - Home, Marketplace, Order, Profil</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Container Utama -->
+    <div class="container">
+      <!-- Halaman Home Baru -->
+      <div id="home" class="page active home-page">
+        <!-- HEADER BAR BARU -->
+        <div class="home-header">
+          <!-- Logo kiri -->
+          <div class="header-left">
+            <img src="img/logo.png" alt="Logo" class="app-logo" />
+          </div>
+
+          <!-- Nama App + Subtitle -->
+          <div class="header-center">
+            <h2 class="logo-text">JastipWorld</h2>
+            <p class="subtitle">Siap menerima pesan anda….</p>
+          </div>
+
+          <!-- Ikon kanan -->
+          <div class="header-right">
+            <span class="icon location"
+              ><img src="img/icon1.png" alt="icon1"
+            /></span>
+            <span class="icon bell"
+              ><img src="img/icon2.png" alt="icon2"
+            /></span>
+          </div>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box">
+          <input type="text" placeholder="Search" />
+          <span class="search-icon">🔍</span>
+        </div>
+
+        <!-- BANNER -->
+        <div class="banner-row">
+          <img src="img/gambar1.png" alt="error" />
+          <img src="img/gambar2.png" alt="error" />
+        </div>
+
+        <!-- KATEGORI -->
+        <h3 class="section-title">Kategori</h3>
+        <div class="category-list">
+          <div class="cat-item">Fashion</div>
+          <div class="cat-item">Beauty</div>
+          <div class="cat-item">Elektronik</div>
+          <div class="cat-item">Sneakers</div>
+        </div>
+
+        <!-- TRAVELER POPULER -->
+        <h3 class="section-title">Traveler Populer</h3>
+
+        <div class="traveler-scroll">
+          <div class="traveler-card">
+            <div class="avatar avatar-novita"></div>
+            <div class="info">
+              <strong>Novita • China</strong>
+              <p>⭐ 4.9 · 98 order selesai</p>
+            </div>
+          </div>
+
+          <div class="traveler-card">
+            <div class="avatar avatar-julio"></div>
+            <div class="info">
+              <strong>Julio • Korea</strong>
+              <p>⭐ 4.8 · 70 order selesai</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- REQUEST TERBARU -->
+        <h3 class="section-title">
+          Request Terbaru <small>(real-time)</small>
+        </h3>
+        <div class="request-card">
+          <div class="req-avatar"></div>
+          <div class="req-info">
+            <strong>Marista Request</strong>
+            <p>Tas Charles and Keith</p>
+          </div>
+        </div>
+
+        <div class="request-card">
+          <div class="req-avatar"></div>
+          <div class="req-info">
+            <strong>Jennie Request</strong>
+            <p>Tas Chanel keluaran terbaru</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Halaman Marketplace -->
+      <div id="marketplace" class="page active marketplace-page">
+        <!-- HEADER BAR BARU (SAMA DENGAN HOME) -->
+        <div class="home-header">
+          <!-- Logo kiri -->
+          <div class="header-left">
+            <img src="img/logo.png" alt="Logo" class="app-logo" />
+          </div>
+
+          <!-- Nama App + Subtitle -->
+          <div class="header-center">
+            <h2 class="logo-text">JastipWorld</h2>
+          </div>
+
+          <!-- Ikon kanan -->
+          <div class="header-right">
+            <span class="icon bell">
+              <img src="img/icon2.png" alt="icon2" />
+            </span>
+          </div>
+        </div>
+        <!-- END HEADER -->
+
+        <div class="marketplace-container">
+          <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="Cari barang Luar negeri" />
+          </div>
+
+          <div class="country-selector">
+            <p>Negara</p>
+            <div class="country-buttons">
+              <button class="country-button">Korea</button>
+              <button class="country-button active">Jepang</button>
+              <button class="country-button">Cina</button>
+              <button class="country-button">Thailand</button>
+            </div>
+          </div>
+
+          <div class="category-selector">
+            <p>Kategori Produk</p>
+            <div class="category-buttons">
+              <button class="category-button">Fashion</button>
+              <button class="category-button">Elektronik</button>
+              <button class="category-button">Sneakers</button>
+            </div>
+          </div>
+
+          <div class="popular-requests">
+            <p>Request Populer</p>
+            <div class="request-item">
+              <div class="request-image">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="request-details">
+                <p class="request-name">Nama Barang</p>
+                <p class="request-description">Sneakers Adidas Samba OG</p>
+              </div>
+            </div>
+            <div class="request-item">
+              <div class="request-image">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <div class="request-details">
+                <p class="request-name">Negara Barang</p>
+                <p class="request-description">Mall Grand Jepang</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button class="action-button primary">Buat request</button>
+            <button class="action-button secondary">Cari Treveler</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Halaman Order -->
+      <div id="order" class="page active order-page">
+        <!-- HEADER BAR BARU (SAMA DENGAN HOME) -->
+        <div class="home-header">
+          <!-- Logo kiri -->
+          <div class="header-left">
+            <img src="img/logo.png" alt="Logo" class="app-logo" />
+          </div>
+
+          <!-- Nama App + Subtitle -->
+          <div class="header-center">
+            <h2 class="logo-text">JastipWorld</h2>
+          </div>
+
+          <!-- Ikon kanan -->
+          <div class="header-right">
+            <span class="icon bell">
+              <img src="img/icon3.png" alt="icon2" />
+            </span>
+          </div>
+        </div>
+        <!-- END HEADER -->
+
+        <div class="order-header">
+          <button class="order-header-button">Menunggu</button>
+          <button class="order-header-button">Diambil</button>
+          <button class="order-header-button">Dibeli</button>
+          <button class="order-header-button">Dikirim</button>
+        </div>
+
+        <div class="order-list">
+          <div class="order-card">
+            <div class="order-card-left">
+              <span class="order-number-icon">#</span>
+              <div>
+                <p class="order-id">ORD-14050</p>
+                <p class="order-description">Tas Chanel</p>
+              </div>
+            </div>
+            <button class="order-detail-button">Lihat Detail</button>
+          </div>
+
+          <div class="order-card">
+            <div class="order-card-left">
+              <span class="order-number-icon">#</span>
+              <div>
+                <p class="order-id">ORD-14050</p>
+                <p class="order-status">Status: Dibeli</p>
+              </div>
+            </div>
+            <button class="order-detail-button">Lihat Detail</button>
+          </div>
+
+          <div class="order-card">
+            <div class="order-card-left">
+              <span class="order-number-icon">#</span>
+              <div>
+                <p class="order-id">ORD-14050</p>
+                <p class="order-status">Status: Dikirim</p>
+              </div>
+            </div>
+            <button class="order-detail-button">Lihat Detail</button>
+          </div>
+
+          <div class="order-card">
+            <div class="order-card-left">
+              <span class="order-number-icon">#</span>
+              <div>
+                <p class="order-id">ORD-14050</p>
+                <p class="order-status">Status: Diterima</p>
+              </div>
+            </div>
+            <button class="order-detail-button">Lihat Detail</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Halaman Profil -->
+      <div id="profil" class="page active profil-page">
+        <div class="profile-container">
+          <div class="profile-header">
+            <button class="back-button">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="profile-title">Profil</h1>
+            <div class="header-icons">
+              <i class="fas fa-bell"></i>
+              <i class="fas fa-cog"></i>
+            </div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-avatar">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <h2 class="profile-name">Alel Jane</h2>
+          </div>
+
+          <div class="profile-actions">
+            <button class="chat-button">
+              <i class="fas fa-comment"></i> Chat
+            </button>
+            <button class="edit-profile-button">
+              <i class="fas fa-edit"></i> Edit Profil
+            </button>
+          </div>
+
+          <div class="account-security">
+            <h3 class="account-security-title">Akun Dan Keamanan</h3>
+            <ul class="account-security-list">
+              <li class="account-security-item">
+                Informasi Pribadi <i class="fas fa-chevron-right"></i>
+              </li>
+              <li class="account-security-item">
+                Metode Pembayaran <i class="fas fa-chevron-right"></i>
+              </li>
+              <li class="account-security-item">
+                Verifikasi Akun <i class="fas fa-chevron-right"></i>
+              </li>
+              <li class="account-security-item">
+                Ubah Password <i class="fas fa-chevron-right"></i>
+              </li>
+            </ul>
+          </div>
+
+          <div class="additional-options">
+            <ul class="additional-options-list">
+              <li class="additional-options-item">
+                Riwayat Pesanan <i class="fas fa-chevron-right"></i>
+              </li>
+              <li class="additional-options-item">
+                Kebijakan JastipWorld <i class="fas fa-chevron-right"></i>
+              </li>
+              <li class="additional-options-item">
+                FAQ <i class="fas fa-chevron-right"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar Bottom -->
+    <nav class="navbar">
+      <div class="navbar-item active" data-page="home">
+        <img src="img/home.png" alt="home" width="25" />
+        <!-- <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg> -->
+        <span>Home</span>
+      </div>
+      <div class="navbar-item" data-page="marketplace">
+        <img src="img/marketplace.png" alt="marketplace" width="25" />
+        <!-- <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M7 4V2C7 1.45 7.45 1 8 1h8c.55 0 1 .45 1 1v2h4c.55 0 1 .45 1 1s-.45 1-1 1h-1v13c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V6H3c-.55 0-1-.45-1-1s.45-1 1-1h4z"
+          />
+        </svg> -->
+        <span>Marketplace</span>
+      </div>
+      <div class="navbar-item" data-page="order">
+        <img src="img/order.png" alt="order" width="25" />
+        <!-- <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg> -->
+        <span>Order</span>
+      </div>
+      <div class="navbar-item" data-page="profil">
+        <img src="img/profil.png" alt="profil" width="25" />
+        <!-- <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.11 3.89 23 5 23H19C20.11 23 21 22.11 21 21V9M19 9H14V4H5V21H19V9Z"
+          />
+        </svg> -->
+        <span>Profil</span>
+      </div>
+    </nav>
+    <script src="script.js"></script>
+  </body>
+</html>
