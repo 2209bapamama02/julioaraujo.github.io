@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JastipWorld - Platform Jastip Web3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000080 0%, #00008B 50%, #0000CD 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, rgba(0, 0, 128, 0.9) 0%, rgba(0, 0, 139, 0.9) 50%, rgba(0, 0, 205, 0.9) 100%);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+            border-bottom: 2px solid rgba(0, 191, 255, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00BFFF;
+            text-shadow: 0 0 15px #00BFFF, 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 15px #00BFFF, 2px 2px 4px rgba(0, 0, 0, 0.8); }
+            to { text-shadow: 0 0 25px #00BFFF, 4px 4px 8px rgba(0, 0, 0, 0.8); }
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 40px;
+            position: relative;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+            padding: 10px 15px;
+            border-radius: 25px;
+        }
+        .nav-links a:hover {
+            color: #00BFFF;
+            background: rgba(0, 191, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 191, 255, 0.4);
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #00BFFF;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #00BFFF;
+            transition: transform 0.3s ease;
+        }
+        .menu-toggle:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://via.placeholder.com/1920x1080/000/fff?text=Latar+Belakang+Web3') no-repeat center center/cover;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 128, 0.7);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.5s ease;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        .btn {
+            background: linear-gradient(45deg, #00BFFF, #4682B4);
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #00BFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.3);
+        }
+        .feature-card i {
+            font-size: 3rem;
+            color: #00BFFF;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .feature-card p {
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .feature-card .detail {
+            font-size: 0.9rem;
+            color: #ddd;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 50px 0;
+            text-align: center;
+        }
+        footer p {
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .social-links a {
+            color: #00BFFF;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(90deg, rgba(0, 0, 128, 0.95) 0%, rgba(0, 0, 139, 0.95) 50%, rgba(0, 0, 205, 0.95) 100%);
+                backdrop-filter: blur(15px);
+                padding: 20px 0;
+                box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 15px 0;
+            }
+            .nav-links a {
+                font-size: 1.2rem;
+                padding: 12px 20px;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">JastipWorld</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#open-request">Open-request</a></li>
+                <li><a href="#orders">Order</a></li>
+                <li><a href="#profile">Profil</a></li>
+            </ul>
+            <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Selamat Datang di JastipWorld</h1>
+            <p>Platform Jastip Terdesentralisasi Anda di Web3. Beli, Jual, dan Minta Layanan dengan Aman Menggunakan Blockchain.</p>
+            <button class="btn">Mulai Sekarang</button>
+        </div>
+    </section>
+
+    <section id="marketplace">
+        <div class="container">
+            <h2 class="section-title">Marketplace</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Beli & Jual</h3>
+                    <p>Jelajahi berbagai layanan jastip yang didukung oleh kontrak pintar.</p>
+                    <p class="detail">Di sini, Anda dapat menemukan produk dari seluruh dunia tanpa batasan geografis. Kontrak pintar memastikan transaksi otomatis dan adil, mengurangi risiko penipuan.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-coins"></i>
+                    <h3>Pembayaran Kripto</h3>
+                    <p>Bayar dengan mata uang kripto untuk transaksi cepat dan aman.</p>
+                    <p class="detail">Dukungan untuk berbagai kripto seperti Ethereum dan Bitcoin memungkinkan pembayaran instan tanpa biaya bank tinggi. Semua transaksi tercatat di blockchain untuk transparansi penuh.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Aman & Transparan</h3>
+                    <p>Semua transaksi dicatat di blockchain untuk kepercayaan maksimal.</p>
+                    <p class="detail">Blockchain memberikan audit trail yang tidak dapat diubah, memastikan bahwa setiap langkah dalam proses jastip dapat diverifikasi oleh semua pihak terlibat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="open-request">
+        <div class="container">
+            <h2 class="section-title">Open Request</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Kirim Permintaan</h3>
+                    <p>Ajukan kebutuhan jastip Anda dan biarkan penyedia menawar.</p>
+                    <p class="detail">Buat permintaan spesifik untuk barang atau layanan, dan dapatkan penawaran dari penyedia terpercaya. Sistem ini mendorong kompetisi sehat untuk harga terbaik.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Didorong Komunitas</h3>
+                    <p>Terhubung dengan komunitas global penggemar jastip.</p>
+                    <p class="detail">Bergabunglah dengan jaringan pengguna yang saling membantu, berbagi tips, dan membangun reputasi melalui ulasan dan rating.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Pembaruan Real-Time</h3>
+                    <p>Dapatkan notifikasi instan tentang status permintaan melalui integrasi Web3.</p>
+                    <p class="detail">Gunakan notifikasi blockchain untuk tetap update tentang tawaran baru, konfirmasi, dan pengiriman tanpa perlu refresh halaman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="orders">
+        <div class="container">
+            <h2 class="section-title">Order</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-list"></i>
+                    <h3>Lacak Pesanan</h3>
+                    <p>Pantau permintaan aktif dan transaksi yang telah selesai.</p>
+                    <p class="detail">Lihat status pesanan Anda secara real-time, termasuk lokasi pengiriman dan estimasi waktu tiba, semua didukung oleh data blockchain.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Riwayat Pesanan</h3>
+                    <p>Lihat pesanan masa lalu dengan tanda terima blockchain detail.</p>
+                    <p class="detail">Akses arsip lengkap semua transaksi Anda, dengan kemampuan untuk mengunduh bukti blockchain untuk keperluan pajak atau audit.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Rating & Ulasan</h3>
+                    <p>Beri rating layanan dan bangun kepercayaan di komunitas.</p>
+                    <p class="detail">Sistem rating terdesentralisasi memungkinkan ulasan yang jujur dan tidak dapat dimanipulasi, membantu pengguna lain memilih penyedia terbaik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile">
+        <div class="container">
+            <h2 class="section-title">Profil</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-user"></i>
+                    <h3>Dasbor Pribadi</h3>
+                    <p>Kelola profil, dompet, dan preferensi Anda.</p>
+                    <p class="detail">Sesuaikan profil Anda dengan foto, bio, dan preferensi bahasa. Semua data disimpan secara aman di blockchain untuk privasi maksimal.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Integrasi Dompet</h3>
+                    <p>Hubungkan dompet Web3 Anda untuk interaksi yang lancar.</p>
+                    <p class="detail">Sambungkan wallet seperti MetaMask untuk pembayaran otomatis dan akses ke NFT atau token eksklusif platform.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cog"></i>
+                    <h3>Pengaturan</h3>
+                    <p>Sesuaikan pengalaman dan pengaturan privasi Anda.</p>
+                    <p class="detail">Atur notifikasi, tema, dan kontrol privasi untuk memastikan pengalaman yang sesuai dengan kebutuhan Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 JastipWorld. Semua hak dilindungi. Didukung oleh Web3.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    
